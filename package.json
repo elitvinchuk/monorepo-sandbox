@@ -1,0 +1,19 @@
+{
+  "name": "MonorepoTest",
+  "version": "1.0.0",
+  "main": "packages/app/index.js",
+  "scripts": {
+    "test": "lerna run test --stream"
+  },
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "dependencies": {
+    "lerna": "^3.20.2"
+  },
+  "devDependencies": {
+    "jest": "^25.1.0"
+  }
+}
