@@ -5,6 +5,8 @@ const app = () => 'Hi from the app One'
 
 const main = () => {
   console.log(app())
+
+
   console.log(first())
   console.log(second())
 }

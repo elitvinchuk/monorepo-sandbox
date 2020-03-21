@@ -1,0 +1,16 @@
+name: Check Application One
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'apps/app1/**'
+
+jobs:
+  validate:
+    name: Greeting
+    runs-on: ubuntu-latest
+    steps:
+      - name: Greet application one
+        run: echo 'Hello from application one'
+

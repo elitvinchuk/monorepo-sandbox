@@ -1,0 +1,49 @@
+# todo: separate workflows for apps/packages
+
+name: Pull request
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  verify:
+    name: Sources are valid
+    runs-on: ubuntu-latest
+
+    # todo: add CI: true to job level environment and know what it does
+
+    steps:
+      - name: Checking out sources
+        uses: actions/checkout@v2
+
+      - name: Setting up node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+
+      # todo: Cache node modules https://help.github.com/en/actions/configuring-and-managing-workflows/caching-dependencies-to-speed-up-workflows
+      - name: Caching dependencies
+
+      - name: Installing dependencies
+        run: yarn --frozen-lockfile
+
+
+      - name: Linting # todo: do testing/linting/typecheking in parallel
+      - name: Testing # todo: do testing/linting/typecheking in parallel
+      - name: Typechecking # todo: do testing/linting/typecheking in parallel
+
+  # todo: create initial/depending job to checkout, install node and all dependencies, cache that
+  #       and then release next jobs to utilize cached assets
+  #       jobs.<job_id>.needs
+
+  # Or do that in job above
+  # Jobs run sequentially
+  building-image:
+    name: Image is buildable
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checking out sources
+        uses: actions/checkout@v2
+
+      - name: Validate docker image is buildable # todo: should understand what project was shanged
