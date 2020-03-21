@@ -1,0 +1,11 @@
+{
+  "name": "@monorepo/app1",
+  "version": "0.1.0",
+  "scripts": {
+    "test": "echo 'No tests for now'"
+  },
+  "dependencies": {
+    "@monorepo/first": "^0.1.0",
+    "@monorepo/second": "^0.1.0"
+  }
+}

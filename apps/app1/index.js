@@ -1,7 +1,7 @@
 const first = require('@monorepo/first')
 const second = require('@monorepo/second')
 
-const app = () => 'Hi from the app'
+const app = () => 'Hi from the app One'
 
 const main = () => {
   console.log(app())
