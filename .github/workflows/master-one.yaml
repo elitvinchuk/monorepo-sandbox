@@ -13,4 +13,6 @@ jobs:
     steps:
       - name: Greet application one
         run: echo 'Hello from application one'
+      - name: JSON
+        run: echo '${{ toJSON(github.event) }}'
 
