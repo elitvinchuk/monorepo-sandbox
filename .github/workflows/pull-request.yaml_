@@ -5,6 +5,8 @@ on:
   pull_request:
     branches:
       - master
+     path:
+      - ''
 
 jobs:
   verify:
@@ -46,4 +48,4 @@ jobs:
       - name: Checking out sources
         uses: actions/checkout@v2
 
-      - name: Validate docker image is buildable # todo: should understand what project was shanged
+      - name: Validate docker image is buildable # todo: should understand what project was changed

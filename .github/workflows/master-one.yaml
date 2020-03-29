@@ -13,6 +13,9 @@ jobs:
     steps:
       - name: Greet application one
         run: echo 'Hello from application one'
-      - name: JSON
-        run: echo '${{ toJSON(github.event) }}'
+      - name: Hello world action step
+        uses: ./validate-application # Uses an action in the root directory
+        id: hello
+        with:
+          who-to-greet: 'Mona the Octocat'
 
