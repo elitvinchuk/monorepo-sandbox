@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Hello world action step
-        uses: ../actions/validate-application # Uses an action in the root directory
+        uses: ./actions/validate-application # Uses an action in the root directory
         id: hello
         with:
           who-to-greet: 'Mona the Octocat'
