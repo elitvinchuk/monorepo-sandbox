@@ -18,5 +18,6 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
+    - ${{ inputs.application }}
     - ${{ inputs.who-to-greet }}
 
