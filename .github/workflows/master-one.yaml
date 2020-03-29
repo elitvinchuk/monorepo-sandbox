@@ -12,6 +12,12 @@ jobs:
       - name: Checking out sources
         uses: actions/checkout@v2
 
+      - name: SHA
+        run: echo "${{ github.sha }}"
+
+      - name: Event
+        run: echo "${{ toJSON(github.event) }}"
+
       - name: Hello world action step
         uses: ./.github/actions/validate-application # Uses an action in the root directory
         id: hello

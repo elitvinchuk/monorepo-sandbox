@@ -2,6 +2,8 @@
   "name": "@monorepo/app1",
   "version": "0.1.0",
   "scripts": {
+    "eslint": "echo 'No tests for now'",
+    "typecheck": "echo 'No tests for now'",
     "test": "echo 'No tests for now'"
   },
   "dependencies": {
