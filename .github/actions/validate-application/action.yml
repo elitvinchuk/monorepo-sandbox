@@ -1,10 +1,16 @@
 name: Validate application
 description: GitHub Action that runs linting, testing and type checking on target application
+
 inputs:
+  application:
+    description: 'Application to validate'
+    required: true
+
   who-to-greet:
     description: 'Who to greet'
     required: true
     default: 'World'
+
 outputs:
   time:
     description: 'The time we greeted you'
