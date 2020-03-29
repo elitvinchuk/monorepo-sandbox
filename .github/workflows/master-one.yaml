@@ -18,6 +18,9 @@ jobs:
       - name: Event
         run: echo "${{ toJSON(github.event) }}"
 
+      - name: Event name
+        run: echo "${{ github.event_name }}"
+
       - name: Hello world action step
         uses: ./.github/actions/validate-application # Uses an action in the root directory
         id: hello
