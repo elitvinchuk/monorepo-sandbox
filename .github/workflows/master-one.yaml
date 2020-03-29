@@ -3,18 +3,14 @@ on:
   push:
     branches:
       - master
-    paths:
-      - 'apps/app1/**'
 
 jobs:
   validate:
     name: Greeting
     runs-on: ubuntu-latest
     steps:
-      - name: Greet application one
-        run: echo 'Hello from application one'
       - name: Hello world action step
-        uses: ./validate-application # Uses an action in the root directory
+        uses: ../actions/validate-application # Uses an action in the root directory
         id: hello
         with:
           who-to-greet: 'Mona the Octocat'
