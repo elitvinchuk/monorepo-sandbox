@@ -9,6 +9,11 @@ jobs:
     name: Greeting
     runs-on: ubuntu-latest
     steps:
+      - name: Checking out sources
+        uses: actions/checkout@v2
+
+      - name: List everything
+        run: ls -l
       - name: Hello world action step
         uses: ./.github/actions/validate-application # Uses an action in the root directory
         id: hello
