@@ -3,11 +3,6 @@ on:
   push:
     branches:
       - master
-    tags:
-      -
-  pull_request:
-    branches:
-      - master
 
 jobs:
   validate:
@@ -25,21 +20,20 @@ jobs:
 #      - name: Installing dependencies
 #        run: yarn --frozen-lockfile
 
-      - name: SHA
-        run: echo "${{ github.sha.substr(0, 4) }}"
+#      - name: SHA
+#        run: echo "${{ github.sha.substr(0, 4) }}"
+#
+#      - name: Event
+#        run: echo "${{ toJSON(github.event) }}"
+#
+#      - name: Event name
+#        run: echo "${{ github.event_name }}"
 
-      - name: Event
-        run: echo "${{ toJSON(github.event) }}"
-
-      - name: Event name
-        run: echo "${{ github.event_name }}"
-
-      - name: Hello world action step
+      - name: Validating Application 1
         uses: ./.github/actions/validate-application # Uses an action in the root directory
         id: hello
         with:
           application: '@monorepo/app1'
-          who-to-greet: 'Mona the Octocat'
 
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
