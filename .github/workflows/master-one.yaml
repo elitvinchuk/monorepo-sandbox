@@ -10,6 +10,20 @@ jobs:
     name: Building application one
     runs-on: ubuntu-latest
     steps:
-      - name: Greet application one
+      - name: GitHub
         run: echo '${{ toJSON(github) }}'
+      - name: Env
+        run: echo '${{ toJSON(env) }}'
+      - name: Job
+        run: echo '${{ toJSON(job) }}'
+      - name: Steps
+        run: echo '${{ toJSON(steps) }}'
+      - name: Runner
+        run: echo '${{ toJSON(runner) }}'
+      - name: Secrets
+        run: echo '${{ toJSON(secrets) }}'
+      - name: Strategy
+        run: echo '${{ toJSON(strategy) }}'
+      - name: Matrix
+        run: echo '${{ toJSON(matrix) }}'
 
