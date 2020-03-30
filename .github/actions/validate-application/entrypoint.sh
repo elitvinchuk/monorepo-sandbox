@@ -1,11 +1,13 @@
 #!/bin/sh -l
 
+git_hash=$(git rev-parse --short HEAD)
+
 # Installing dependencies
 yarn install --frozen-lockfile
 
 yarn workspace "$1" test
 
-git_hash=$(git rev-parse --short HEAD)
+docker -v
 
 echo "$git_hash"
 
