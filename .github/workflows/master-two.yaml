@@ -2,8 +2,8 @@ name: Check Application Two
 on:
   push:
     paths:
-      - 'apps/app2/**'
       - '!packages/**'
+      - 'apps/app2/**'
 
 jobs:
   validate:
