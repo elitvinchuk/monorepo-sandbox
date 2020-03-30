@@ -2,8 +2,8 @@ name: Check Application One
 on:
   push:
     paths:
-      - '!packages/**'
       - 'apps/app1/**'
+      - '!packages/**'
 
 jobs:
   validate:
@@ -11,5 +11,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Greet application one
-        run: echo 'Hello from application one'
+        run: echo '${{ toJSON(github) }}'
 
