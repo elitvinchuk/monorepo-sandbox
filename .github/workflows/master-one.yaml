@@ -1,40 +1,15 @@
 name: Check Application One
 on:
   push:
-    branches:
-      - master
+    paths:
+      - 'apps/app1/**'
+      - '!packages/**'
 
 jobs:
   validate:
-    name: Greeting
+    name: Building application one
     runs-on: ubuntu-latest
     steps:
-      - name: Checking out sources
-        uses: actions/checkout@v2
-
-#      - name: Setting up node
-#        uses: actions/setup-node@v1
-#        with:
-#          node-version: '12.x'
-#
-#      - name: Installing dependencies
-#        run: yarn --frozen-lockfile
-
-#      - name: SHA
-#        run: echo "${{ github.sha.substr(0, 4) }}"
-#
-#      - name: Event
-#        run: echo "${{ toJSON(github.event) }}"
-#
-#      - name: Event name
-#        run: echo "${{ github.event_name }}"
-
-      - name: Validating Application 1
-        uses: ./.github/actions/validate-application # Uses an action in the root directory
-        id: hello
-        with:
-          application: '@monorepo/app1'
-
-      - name: Get the output time
-        run: echo "The time was ${{ steps.hello.outputs.time }}"
+      - name: Greet application one
+        run: echo 'Hello from application one'
 

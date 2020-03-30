@@ -1,0 +1,20 @@
+name: Building all applications
+on:
+  push:
+    paths:
+      - 'packages/**'
+
+jobs:
+  build-first:
+    name: Building applicaion one
+    runs-on: ubuntu-latest
+    steps:
+      - name: Greet application one
+        run: echo 'Hello from application one'
+
+  build-second:
+    name: Building applicaion two
+    runs-on: ubuntu-latest
+    steps:
+      - name: Greet application two
+        run: echo 'Hello from application two'
