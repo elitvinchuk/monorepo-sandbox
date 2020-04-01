@@ -37,7 +37,8 @@ jobs:
       #      - name: Type checking
       #        run: yarn ci:tsc
 
-      - env:
+      - name: Echoing
+        env:
           SUPER_SECRET: ${{ secrets.ECR_HOST }}
         run: echo "$SUPER_SECRET"
 
