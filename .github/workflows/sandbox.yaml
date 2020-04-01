@@ -10,7 +10,7 @@ env:
 jobs:
   verify:
     name: Verify Pingwin is ready to be merged
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - name: Checking out sources
         uses: actions/checkout@v2
