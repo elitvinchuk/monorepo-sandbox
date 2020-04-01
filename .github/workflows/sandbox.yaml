@@ -37,6 +37,10 @@ jobs:
       #      - name: Type checking
       #        run: yarn ci:tsc
 
+      - env:
+          SUPER_SECRET: ${{ secrets.ECR_HOST }}
+        run: echo "$SUPER_SECRET"
+
       - name: Building image
         run: docker build -t $IMAGE_NAME:${GITHUB_SHA::8} -f apps/pingwin/Dockerfile .
 
