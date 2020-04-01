@@ -12,8 +12,11 @@ jobs:
     name: Verify Pingwin is ready to be merged
     runs-on: ubuntu-latest
     steps:
-      - name: Checking out sources
-        uses: actions/checkout@v2
+#      - name: Checking out sources
+#        uses: actions/checkout@v2
+
+      - run: echo $DOCKER_REGISTRY
+      - run: echo $NAMESPACE
 
       #      - name: Setting up node
       #        uses: actions/setup-node@v1
@@ -42,7 +45,6 @@ jobs:
 #          SUPER_SECRET: ${{ secrets.ECR_HOST }}
 #        run: echo "$SUPER_SECRET"
 
-      - run: echo $DOCKER_REGISTRY
 
 #      - name: Building image
 #        run: docker build -t $IMAGE_NAME:${GITHUB_SHA::8} -f apps/pingwin/Dockerfile .
