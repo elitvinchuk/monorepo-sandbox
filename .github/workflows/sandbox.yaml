@@ -17,6 +17,7 @@ jobs:
 
       - run: echo $DOCKER_REGISTRY
       - run: echo $NAMESPACE
+      - run: echo $IMAGE_NAME
 
       #      - name: Setting up node
       #        uses: actions/setup-node@v1
