@@ -4,7 +4,7 @@
   "scripts": {
     "eslint": "echo 'No tests for now'",
     "typecheck": "echo 'No tests for now'",
-    "test": "echo 'No tests for now'"
+    "test": "echo 'No tests in application one for now'"
   },
   "dependencies": {
     "@monorepo/first": "^0.1.0",

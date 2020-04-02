@@ -5,41 +5,67 @@ on:
 env:
   NAMESPACE: pingwin
   ECR_HOST2: 616837500225.dkr.ecr.us-east-1.amazonaws.com
-  IMAGE_NAME: $(ECR_HOST2)/pingwin/pingwin-fe
+  IMAGE_NAME: %ECR_HOST2%/pingwin/pingwin-fe
 
 jobs:
-  verify:
-    name: Verify Pingwin is ready to be merged
+  verify1:
+    name: Verify application one is ready to be merged
     runs-on: ubuntu-latest
     steps:
-#      - name: Checking out sources
-#        uses: actions/checkout@v2
+      - name: Checking out sources
+        uses: actions/checkout@v2
 
-      - run: echo $NAMESPACE
-      - run: echo $ECR_HOST2
-      - run: echo $IMAGE_NAME
+#      - run: echo $NAMESPACE
+#      - run: echo $ECR_HOST2
+#      - run: echo $IMAGE_NAME
 
-      #      - name: Setting up node
-      #        uses: actions/setup-node@v1
-      #        with:
-      #          node-version: '12.x'
+            - name: Setting up node
+              uses: actions/setup-node@v1
+              with:
+                node-version: '12.x'
       #
       #       todo: remove dat installation
-      #      - name: Installing yarn
-      #        run: curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo | echo '' | sudo tee /etc/yum.repos.d/yarn.repo
-      #      - run: sudo yum install yarn
+#            - name: Installing yarn
+#              run: curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo | echo '' | sudo tee /etc/yum.repos.d/yarn.repo
+#            - run: sudo yum install yarn
       #
-      #      - name: Installing dependencies
-      #        run: yarn install --frozen-lockfile
+            - name: Installing dependencies
+              run: yarn install --frozen-lockfile
       #
-      #      - name: Testing
-      #        run: yarn workspace @lyft/pingwin test
+            - name: Testing
+              run: yarn workspace @monorepo/app1 test
       #
       #      - name: Linting
       #        run: yarn ci:lint
       #
       #      - name: Type checking
       #        run: yarn ci:tsc
+verify2:
+  name: Verify application two is ready to be merged
+  runs-on: ubuntu-latest
+  steps:
+    - name: Checking out sources
+      uses: actions/checkout@v2
+
+        #      - run: echo $NAMESPACE
+        #      - run: echo $ECR_HOST2
+        #      - run: echo $IMAGE_NAME
+
+        - name: Setting up node
+          uses: actions/setup-node@v1
+          with:
+            node-version: '12.x'
+        #
+        #       todo: remove dat installation
+        #            - name: Installing yarn
+        #              run: curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo | echo '' | sudo tee /etc/yum.repos.d/yarn.repo
+        #            - run: sudo yum install yarn
+        #
+        - name: Installing dependencies
+          run: yarn install --frozen-lockfile
+    #
+          - name: Testing
+            run: yarn workspace @monorepo/app2 test
 
 #      - name: Echoing
 #        env:

@@ -2,7 +2,7 @@
   "name": "@monorepo/app2",
   "version": "0.1.0",
   "scripts": {
-    "test": "echo 'No tests for now'"
+    "test": "echo 'No tests in application two for now'"
   },
   "dependencies": {
     "@monorepo/first": "^0.1.0",
