@@ -1,11 +1,6 @@
 name: Pingwin Pull Request
 on:
-  [push]
-
-env:
-  NAMESPACE: pingwin
-  ECR_HOST2: 616837500225.dkr.ecr.us-east-1.amazonaws.com
-  IMAGE_NAME: %ECR_HOST2%/pingwin/pingwin-fe
+  [pull_request]
 
 jobs:
   verify1:
