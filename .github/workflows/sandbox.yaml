@@ -4,13 +4,14 @@ on:
 
 env:
   data1: '1'
+  BRANCH_NAME: ${$GITHUB_REF#refs/heads/}
 
 jobs:
   verify1:
     name: Verify application one is ready to be merged
     runs-on: ubuntu-latest
     env:
-      data2: ${data1}:2
+      data2: $data1:2
     steps:
       - name: Echoing stuff
-        run: echo $data1 $data2 ${data1} ${data2} $GITHUB_REF
+        run: echo $BRANCH_NAME
