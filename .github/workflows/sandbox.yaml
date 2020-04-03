@@ -4,7 +4,7 @@ on:
 
 env:
   data1: '1'
-  BRANCH_NAME: ${$GITHUB_REF#refs/heads/}
+  BRANCH_NAME: ${GITHUB_REF#refs/heads/}
 
 jobs:
   verify1:
