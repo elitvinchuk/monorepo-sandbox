@@ -11,7 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     env:
       data2: $data1:2
-      BRANCH_NAME: "${GITHUB_REF#refs/heads/}"
     steps:
       - name: Echoing stuff
-        run: echo ${BRANCH_NAME}
+        run: echo ${GITHUB_REF#refs/heads/}
