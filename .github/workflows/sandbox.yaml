@@ -4,7 +4,9 @@ on:
 
 env:
   data1: '1'
-  data2: $data1:2
+  data2: "$data1:2"
+  data3: ${data1}:2
+  data4: "${data1}:2"
 
 jobs:
   verify1:
@@ -12,4 +14,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Echoing stuff
-        run: echo $data2
+        run: echo $data1 $data2 $data3 $data4 ${data1} ${data2} ${data3} ${data4}
