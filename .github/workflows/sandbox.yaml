@@ -4,14 +4,13 @@ on:
 
 env:
   data1: '1'
-  data2: "$data1:2"
-  data3: ${data1}:2
-  data4: "${data1}:2"
 
 jobs:
   verify1:
     name: Verify application one is ready to be merged
     runs-on: ubuntu-latest
+    env:
+      data2: ${data1}:2
     steps:
       - name: Echoing stuff
-        run: echo $data1 $data2 $data3 $data4 ${data1} ${data2} ${data3} ${data4}
+        run: echo $data1 $data2 ${data1} ${data2} $GITHUB_REF
