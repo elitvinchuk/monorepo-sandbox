@@ -1,40 +1,15 @@
 name: Pingwin Pull Request
 on:
-  [pull_request]
+  [push]
+
+env:
+  data1: '1'
+  data2: $data1:2
 
 jobs:
   verify1:
     name: Verify application one is ready to be merged
     runs-on: ubuntu-latest
     steps:
-      - name: Checking out sources
-        uses: actions/checkout@v2
-
-      - name: Setting up node
-        uses: actions/setup-node@v1
-        with:
-          node-version: '12.x'
-
-      - name: Installing dependencies
-        run: yarn install --frozen-lockfile
-
-      - name: Testing
-        run: yarn workspace @monorepo/app1 test
-
-  verify2:
-    name: Verify application two is ready to be merged
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checking out sources
-        uses: actions/checkout@v2
-
-      - name: Setting up node
-        uses: actions/setup-node@v1
-        with:
-          node-version: '12.x'
-
-      - name: Installing dependencies
-        run: yarn install --frozen-lockfile
-
-      - name: Testing
-        run: yarn workspace @monorepo/app2 test
+      - name: Echoing stuff
+        run: echo $data2
